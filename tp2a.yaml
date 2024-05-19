@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: 4arctic
+  labels:
+    name: test
+    type: pod
+
+spec:
+  containers:
+    - name: web
+      image: nginx
