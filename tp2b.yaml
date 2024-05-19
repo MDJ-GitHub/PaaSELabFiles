@@ -20,3 +20,4 @@ spec:
     spec:
       containers:
         - name: web
+          image: nginx:latest  # Specify the desired image here
