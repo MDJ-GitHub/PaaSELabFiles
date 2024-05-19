@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rep4arctic
+  labels:
+    app: myapp
+    type: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: test
+      type: pod
+  template:
+    metadata:
+      name: 4arctic
+      labels:
+        name: test
+        type: pod
+    spec:
+      containers:
+        - name: web
