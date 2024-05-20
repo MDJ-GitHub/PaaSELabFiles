@@ -15,15 +15,16 @@ spec:
       affinity:
         nodeAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: myKey
-                operator: In
-                values:
-                - label1
-                - label2
+            - weight: 1
+              preference:
+                matchExpressions:
+                  - key: myKey
+                    operator: In
+                    values:
+                      - label1
+                      - label2
       containers:
-      - name: nginx
-        image: nginx:1.7.9
-        ports:
-        - containerPort: 80
+        - name: nginx
+          image: nginx:1.7.9
+          ports:
+            - containerPort: 80
